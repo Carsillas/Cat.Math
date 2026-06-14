@@ -1,0 +1,40 @@
+name: Publish NuGet Packages
+
+on:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: "8.0.x"
+
+      - name: Extract version from tag
+        id: extract_version
+        run: |
+          RAW_TAG="${GITHUB_REF##refs/tags/}"
+          VERSION="${RAW_TAG#v}"
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
+
+      - name: Restore dependencies
+        run: dotnet restore Cat.Physics.sln
+
+      - name: Test
+        run: dotnet test Cat.Physics.sln --configuration Release --no-restore
+
+      - name: Pack Cat.Math
+        run: dotnet pack Cat.Math/Cat.Math.csproj --configuration Release --no-restore --output out -p:PackageVersion=${{ steps.extract_version.outputs.version }}
+
+      - name: Pack Cat.Physics
+        run: dotnet pack Cat.Physics/Cat.Physics.csproj --configuration Release --no-restore --output out -p:PackageVersion=${{ steps.extract_version.outputs.version }}
+
+      - name: Push to NuGet
+        run: dotnet nuget push "out/*.nupkg" --api-key "${{ secrets.NUGET_API_KEY }}" --source https://api.nuget.org/v3/index.json --skip-duplicate
