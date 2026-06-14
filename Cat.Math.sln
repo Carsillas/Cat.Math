@@ -2,6 +2,8 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cat.Math", "Cat.Math\Cat.Math.csproj", "{F3B378C4-65DE-4B4E-9D44-7DA2D1E32B44}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cat.Math.Tests", "Cat.Math.Tests\Cat.Math.Tests.csproj", "{10FE2E61-6B7A-49E8-8537-16E32B466CDB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -12,5 +14,9 @@ Global
 		{F3B378C4-65DE-4B4E-9D44-7DA2D1E32B44}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F3B378C4-65DE-4B4E-9D44-7DA2D1E32B44}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F3B378C4-65DE-4B4E-9D44-7DA2D1E32B44}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10FE2E61-6B7A-49E8-8537-16E32B466CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10FE2E61-6B7A-49E8-8537-16E32B466CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10FE2E61-6B7A-49E8-8537-16E32B466CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10FE2E61-6B7A-49E8-8537-16E32B466CDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
