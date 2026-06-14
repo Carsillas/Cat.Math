@@ -4,6 +4,15 @@
         <TargetFramework>net9.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <PackageId>Carsillas.Cat.Math</PackageId>
     </PropertyGroup>
 
+    <PropertyGroup>
+        <Title>Cat Math</Title>
+        <Authors>Carsillas</Authors>
+        <RepositoryUrl>https://github.com/Carsillas/Cat.Math</RepositoryUrl>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <PackageOutputPath>$(SolutionDir)artifacts</PackageOutputPath>
+    </PropertyGroup>
+    
 </Project>
